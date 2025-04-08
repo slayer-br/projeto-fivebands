@@ -28,7 +28,7 @@ A proposta consiste em uma **landing page interativa** que apresenta **5 bandas 
 
 ## 📄 Licença
 
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo [`LICENSE`](./LICENSE) para mais detalhes.
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo [`LICENSE`](./LICENSE.md) para mais detalhes.
 
 ### ⚠️ Aviso Legal
 
