@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #000000;
+  overflow: hidden;
+}
+
+main {
+  &::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 80vh;
+    background: linear-gradient(15deg, #000000 15%, rgba(0, 0, 0, 0) 50%) no-repeat;
+  }
+
+  .band {
+    display: none;
+    height: 100vh;
+
+    &.selected {
+      display: block;
+    }
+
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .content {
+      position: absolute;
+      top: 0;
+      left: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 50px;
+      height: 100vh;
+      max-width: 380px;
+      z-index: 1;
+
+
+      .band-name {
+        font-family: "Secular One";
+        font-size: 4.8rem;
+        font-weight: 400;
+        color: #f6f648;
+        margin-bottom: 20px;
+      }
+
+      .description {
+        color: #f6f648;
+        font-family: "Rubik";
+        font-size: 1.6rem;
+        line-height: 24px;
+      }
+    }
+  }
+}
+
+.buttons {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  right: 0;
+  min-height: 100vh;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  .button {
+    background-color: #000000;
+    border: none;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+
+    img {
+      border-radius: 50%;
+    }
+
+    &.selected {
+      transform: scale(1.2);
+      box-shadow: 0 0 15px #d9d9d9;
+    }
+
+    &.slayer.selected {
+      box-shadow: 0 0 20px #47ffc6;
+    }
+
+    &.testament.selected {
+      border: 1px solid #000000;
+      box-shadow: 0 0 20px #f64348;
+    }
+
+    &.metallica.selected {
+      box-shadow: 0 0 20px #9747ff;
+    }
+
+    &.exodus.selected {
+      border: 1px solid #000000;
+      box-shadow: 0 0 20px #f6f648;
+    }
+
+    &.anthrax.selected {
+      box-shadow: 0 0 20px #ffa947;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  main {
+    &::after {
+      width: 100vh;
+    }
+
+    .band {
+      .image {
+        height: 85%;
+        object-position: center;
+        object-fit: contain;
+      }
+    }
+
+    .buttons {
+      flex-direction: row;
+      align-items: flex-end;
+      width: 100%;
+      padding: 30px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    .band {
+      .image {
+        height: 85%;
+        object-position: center;
+        object-fit: contain;
+      }
+
+      .content {
+        justify-content: flex-end;
+        left: 0;
+        top: -20%;
+        padding: 30px;
+        max-width: 100vw;
+
+        .character-name {
+          font-size: 3rem;
+        }
+
+        .description {
+          max-width: 500px;
+        }
+      }
+    }
+  }
+
+  .buttons {
+    flex-direction: row;
+    align-items: flex-end;
+    width: 100%;
+    padding: 30px;
+
+    .buttons {
+      height: 70px;
+      width: 70px;
+
+      img {
+        max-width: 70px;
+      }
+    }
+  }
+}
+
+@media (max-width: 570px) {
+  main {
+    .band {
+      .image {
+        height: auto;
+      }
+    }
+  }
+
+  .buttons {
+    top: -5%;
+
+    .button {
+      height: 60px;
+      width: 60px;
+
+      img {
+        max-width: 60px;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  main {
+    .band {
+      .image {
+        height: auto;
+      }
+
+      .content {
+        top: -20%;
+      }
+    }
+  }
+
+  .buttons {
+    top: -5%;
+
+    .button {
+      height: 50px;
+      width: 50px;
+
+      img {
+        max-width: 50px;
+      }
+    }
+  }
+}
